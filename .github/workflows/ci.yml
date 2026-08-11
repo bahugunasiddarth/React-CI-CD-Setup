@@ -21,3 +21,6 @@ jobs:
 
       - name: "Clone Repo"  
         uses: actions/checkout@v2
+
+      - name: "List directories"  
+        run:   ls
