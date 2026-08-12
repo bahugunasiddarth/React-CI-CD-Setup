@@ -7,10 +7,10 @@ describe('App Component', () => {
     render(<App />);
   });
 
-  it('displays the welcome message', () => {
+  it('displays the heading', () => {
     render(<App />);
 
-    const headingElement = screen.getByText(/welcome/i);
+    const headingElement = screen.getByText(/get started/i);
 
     expect(headingElement).toBeInTheDocument();
   });
