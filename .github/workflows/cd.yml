@@ -9,7 +9,6 @@ on:
 
 jobs:
   deploy:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}  
     runs-on: ubuntu-latest
 
     steps:
@@ -25,7 +24,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build
-          path: dist
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
 
       - name: Install Vercel CLI
         run: npm install --global vercel
