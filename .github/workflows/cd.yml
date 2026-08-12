@@ -33,5 +33,8 @@ jobs:
         run: npm install --global vercel
 
       - name: Deploy to Vercel
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
         run: |
-          vercel --prod --token=${{ secrets.VERCEL_TOKEN }} --yes --name=CICDProject 
+          vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --yes
