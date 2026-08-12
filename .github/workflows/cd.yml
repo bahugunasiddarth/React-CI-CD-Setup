@@ -33,4 +33,4 @@ jobs:
 
       - name: Deploy to Vercel
         run: |
-          vercel --prod --token=${{ secrets.VERCEL_TOKEN }} --confirm --name=CICDProject
+          vercel --prod --token=${{ secrets.VERCEL_TOKEN }} --yes --name=CICDProject
